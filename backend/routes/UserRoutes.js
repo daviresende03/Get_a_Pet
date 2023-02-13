@@ -16,5 +16,4 @@ router.patch
     imageUpload.single('image'), 
     UserController.editUser
 )
-
 module.exports = router
