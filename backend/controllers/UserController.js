@@ -129,12 +129,15 @@ module.exports = class UserController {
     static async editUser(req,res) {
         const id = req.params.id
         const { name, email, phone, password, confirmpassword } = req.body
-        let image = ''
-
+        
         // check if user exist
         const token = getToken(req)
         const user = await getUserByToken(token)
 
+        if(req.file){
+            user.image = req.file.filename
+        }
+        
         // validations
         if(!name){
             res.status(422).json({message: 'Campo nome é obrigatório'})
@@ -161,10 +164,10 @@ module.exports = class UserController {
 
         if(password !== confirmpassword){
             return res.status(422).json({message:"Campo confirmação de senha deve ser igual ao campo senha"})
-        } else if(password == confirmpassword && password !== null){
+        } else if(password == confirmpassword && password != null){
             // creating password
             const salt = await bcrypt.genSalt(12)
-            const passwordHash = await bcrypt.hash(password,salt)
+            const passwordHash = await bcrypt.hash(password, salt)
             user.password = passwordHash
         }
         try {
