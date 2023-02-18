@@ -19,7 +19,6 @@ function App() {
         <Route path="/" exact element={<Home />} />
         {/*<Route path="/teste" exact element={<Navigate to="/testando"/>} />*/}
       </Routes>
-      <Footer/>
   </Router>
   );
 }

@@ -12,14 +12,12 @@ import Register from './components/pages/Auth/Register'
 function App() {
   return (
     <Router>
-      <Navbar/>
       <Routes>
         <Route path="/login" exact element={<Login />} />
         <Route path="/register" exact element={<Register/>} />
         <Route path="/" exact element={<Home />} />
         {/*<Route path="/teste" exact element={<Navigate to="/testando"/>} />*/}
       </Routes>
-      <Footer/>
   </Router>
   );
 }
