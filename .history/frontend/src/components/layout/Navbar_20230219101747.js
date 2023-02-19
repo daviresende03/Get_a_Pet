@@ -19,7 +19,7 @@ function Navbar() {
                 <li>
                     <Link to="/">Adotar</Link>
                 </li>
-                {authenticated ? (<></>) : (
+                {authenticated ? () : (
                     <>
                     <li>
                         <Link to="/login">Entrar</Link>
