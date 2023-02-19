@@ -8,7 +8,7 @@ import { useContext } from "react"
 
 
 function Navbar() {
-    const { authenticated, logout } = useContext(Context)
+    const { authenticated } = useContext(Context)
     return (
         <nav className={styles.navbar}>
             <div className={styles.navbar_logo}>
@@ -20,9 +20,7 @@ function Navbar() {
                     <Link to="/">Adotar</Link>
                 </li>
                 {authenticated ? (<>
-                    <li>
-                        <a onClick={logout}>Sair</a>
-                    </li>
+                    <li onClick={logout}>Sair</li>
                 </>) : (
                     <>
                     <li>

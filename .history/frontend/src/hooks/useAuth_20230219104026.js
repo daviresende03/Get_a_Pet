@@ -49,10 +49,8 @@ export default function useAuth() {
         setAuthenticated(false)
         localStorage.removeItem('token')
         api.defaults.headers.Authorization = undefined
-        navigate('/login')
-
-        setFlashMessage(msgText,msgType)
+        navigate('/')
     }
 
-    return { authenticated, register, logout }
+    return { authenticated, register }
 }
