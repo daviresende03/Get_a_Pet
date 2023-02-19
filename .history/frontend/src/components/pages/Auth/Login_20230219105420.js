@@ -8,16 +8,12 @@ function Login() {
     const [user, setUser] = useState({})
     const {login} = useContext(Context)
     function handleChange(e) {
-        setUser({...user, [e.target.name]: e.target.value})
-    }
-    function handleSubmit(e){
-        e.preventDefault()
-        login(user)
+        setUser({...user, [e.target.name]})
     }
     return (
         <section className={styles.form_container}>
             <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <Input
                     type="email"
                     text="Email"

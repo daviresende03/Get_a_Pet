@@ -58,7 +58,7 @@ export default function useAuth() {
         let msg = ''
         let msgType = ''
         try {
-            const data = await api.post('/users/login', user).then((res) => {
+            const data = await api.post('/users/register', user).then((res) => {
                 return res.data
             })
             msg = data.message
@@ -71,5 +71,5 @@ export default function useAuth() {
         setFlashMessage(msg,msgType)
     }
 
-    return { authenticated, register, logout, login }
+    return { authenticated, register, logout }
 }

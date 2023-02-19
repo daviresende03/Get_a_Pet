@@ -55,21 +55,8 @@ export default function useAuth() {
     }
 
     async function login(user) {
-        let msg = ''
-        let msgType = ''
-        try {
-            const data = await api.post('/users/login', user).then((res) => {
-                return res.data
-            })
-            msg = data.message
-            msgType = 'success'
-            await authUser(data)
-        } catch (err) {
-            msg = err.response.data.message
-            msgType = 'error'
-        }
-        setFlashMessage(msg,msgType)
+        
     }
 
-    return { authenticated, register, logout, login }
+    return { authenticated, register, logout }
 }

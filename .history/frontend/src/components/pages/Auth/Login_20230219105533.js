@@ -12,7 +12,7 @@ function Login() {
     }
     function handleSubmit(e){
         e.preventDefault()
-        login(user)
+        await login(user)
     }
     return (
         <section className={styles.form_container}>

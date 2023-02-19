@@ -71,5 +71,5 @@ export default function useAuth() {
         setFlashMessage(msg,msgType)
     }
 
-    return { authenticated, register, logout, login }
+    return { authenticated, register, logout }
 }
