@@ -13,7 +13,6 @@ import Register from './components/pages/Auth/Register'
 
 // context
 import { UserProvider } from './context/UserContext';
-import Profile from './components/pages/User/Profile';
 
 function App() {
   return (
@@ -25,7 +24,7 @@ function App() {
           <Routes>
             <Route path="/login" exact element={<Login />} />
             <Route path="/register" exact element={<Register/>} />
-            <Route path="/user/profile" exact element={<Profile/>} />
+            <Route path="/register" exact element={<Register/>} />
             <Route path="/" exact element={<Home />} />
             {/*<Route path="/teste" exact element={<Navigate to="/testando"/>} />*/}
           </Routes>

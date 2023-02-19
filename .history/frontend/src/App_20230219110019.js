@@ -13,7 +13,6 @@ import Register from './components/pages/Auth/Register'
 
 // context
 import { UserProvider } from './context/UserContext';
-import Profile from './components/pages/User/Profile';
 
 function App() {
   return (
